@@ -12,8 +12,7 @@ import {
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const handleShowPass = () => {
-      return setShowPass(!showPass);
-
+    return setShowPass(!showPass);
   };
   return (
     <div
