@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif,'Varela Round'; */
+    font-family: 'Varela Round', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,4 +19,10 @@ code {
 }
 .dropdown-toggle{
   border: none;
+}
+.border border-0 dropdown-toggle btn btn-primary{
+  background-color: #b4b4b4;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
 }

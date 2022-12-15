@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import WalletModal from "./WalletModal";
 import { FaWallet, FaAngleDown, FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -20,7 +21,12 @@ const Header = () => {
       <Container>
         <Row className="w-100 d-flex justify-content-between">
           <Col className="d-flex justify-start">
-            <Navbar.Brand href="/" className="text-left fw-bold fs-3">Faucets</Navbar.Brand>
+            <Navbar.Brand
+              href="/"
+              className="text-left fw-bold fs-3 text-primary"
+            >
+              Faucets
+            </Navbar.Brand>
           </Col>
           <Col>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -37,25 +43,34 @@ const Header = () => {
                   <option value="3">Three</option>
                 </Form.Select>
                 <Button
-                  className="mx-3"
+                  className="mx-3 rounded-0"
                   variant="outline-primary"
                   onClick={() => setModalShow(true)}
                 >
                   <FaWallet></FaWallet> Connect Wallet
                 </Button>
+
                 <Dropdown className="border border-0 ">
-                  <Dropdown.Toggle className="bg-light border border-0">
-                    <FaUserCircle className="text-dark border border-0 fs-2"></FaUserCircle>
+                  <Dropdown.Toggle
+                    className="border border-0 rounded-circle"
+                    style={{
+                      background: "#EFEFEF",
+                      height: "55px",
+                      width: "55px",
+                    }}
+                  >
+                    <FaUserCircle
+                      className="text-dark border border-0 fs-2 "
+                      style={{ color: "#6D7380" }}
+                    ></FaUserCircle>
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
-                      Another action
+                    <Dropdown.Item>
+                      <Link to="/login" className="text-decoration-none text-dark"> Log in</Link>
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                      Something else
-                    </Dropdown.Item>
+                    <Dropdown.Item href="/signup"><Link to="/signup" className="text-decoration-none text-dark"> Sign Up</Link></Dropdown.Item>
+                    <Dropdown.Item href="/faq"><Link to="/faq" className="text-decoration-none text-dark"> FAQ</Link></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </>
