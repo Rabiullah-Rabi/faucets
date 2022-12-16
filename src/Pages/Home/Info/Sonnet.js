@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 const Sonnet = () => {
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover className="w-50 ">
       <thead>
         <tr>
           <th>Sr</th>

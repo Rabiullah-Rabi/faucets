@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Button,
   Col,
@@ -13,20 +13,22 @@ import {
 import WalletModal from "./WalletModal";
 import { FaWallet, FaAngleDown, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { NetworkContext } from "../context/NetworkProvider";
 
 const Header = () => {
+  const { networks, setSelectedNet } = useContext(NetworkContext);
+  // console.log(networks);
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <Navbar expand="lg">
       <Container>
         <Row className="w-100 d-flex justify-content-between">
           <Col className="d-flex justify-start align-items-center">
-            <Link to='/' className="text-decoration-none">
-            <Navbar.Brand
-              className="text-left fw-bold fs-3 text-primary"
-            >
-              Faucets
-            </Navbar.Brand></Link>
+            <Link to="/" className="text-decoration-none">
+              <Navbar.Brand className="text-left fw-bold fs-3 text-primary">
+                Faucets
+              </Navbar.Brand>
+            </Link>
           </Col>
           <Col>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -37,10 +39,19 @@ const Header = () => {
                 navbarScroll
               ></Nav>
               <>
-                <Form.Select className="w-25">
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                <Form.Select
+                  className="w-25"
+                  onChange={(event) => {
+                    console.log(event.target.value);
+                    setSelectedNet(event.target.value);
+                  }}
+                >
+                  {networks.map((network) => (
+                    <option key={network.name} value={network.name}>
+                      {" "}
+                      {network.name}
+                    </option>
+                  ))}
                 </Form.Select>
                 <Button
                   className="mx-3 rounded-0"
@@ -67,10 +78,32 @@ const Header = () => {
 
                   <Dropdown.Menu>
                     <Dropdown.Item>
-                      <Link to="/login" className="text-decoration-none text-dark"> Log in</Link>
+                      <Link
+                        to="/login"
+                        className="text-decoration-none text-dark"
+                      >
+                        {" "}
+                        Log in
+                      </Link>
                     </Dropdown.Item>
-                    <Dropdown.Item href="/signup"><Link to="/signup" className="text-decoration-none text-dark"> Sign Up</Link></Dropdown.Item>
-                    <Dropdown.Item href="/faq"><Link to="/faq" className="text-decoration-none text-dark"> FAQ</Link></Dropdown.Item>
+                    <Dropdown.Item href="/signup">
+                      <Link
+                        to="/signup"
+                        className="text-decoration-none text-dark"
+                      >
+                        {" "}
+                        Sign Up
+                      </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/faq">
+                      <Link
+                        to="/faq"
+                        className="text-decoration-none text-dark"
+                      >
+                        {" "}
+                        FAQ
+                      </Link>
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </>

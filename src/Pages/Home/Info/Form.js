@@ -6,13 +6,13 @@ const Form = () => {
     <div>
       <form className="row g-3 text-start w-75">
         <div className="col-md-12">
-          <label for="walletAddress" className="form-label">
+          <label htmlFor="walletAddress" className="form-label">
             Wallet Address
           </label>
           <input type="text" className="form-control" id="walletAddress" />
         </div>
         <div className="col-md-6">
-          <label for="reqType" className="form-label">
+          <label htmlFor="reqType" className="form-label">
             Request Type
           </label>
           <input
@@ -24,7 +24,7 @@ const Form = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="reqType" className="form-label">
+          <label htmlFor="reqType" className="form-label">
             .
           </label>
           <input

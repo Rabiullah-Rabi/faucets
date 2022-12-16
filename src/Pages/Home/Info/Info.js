@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiFillWarning } from "react-icons/ai";
 import reCAPTCHA, { ReCAPTCHA } from "react-google-recaptcha";
 
 import Form from "./Form";
 import TableTab from "./Tabs";
+import { NetworkContext } from "../../../context/NetworkProvider";
 
 const Info = () => {
+  const {  selectedNet } = useContext(NetworkContext);
+
   return (
     <div className="bg-white container p-4">
       <div
@@ -13,8 +16,8 @@ const Info = () => {
         style={{ background: "#EEF2FE" }}
       >
         <AiFillWarning className="text-primary" /> Your wallet is connected to{" "}
-        <span className="fw-bold"> Harmony Testnet</span>, so you are requesting
-        <span className="fw-bold"> Harmony Testnet</span> Link/ETH.
+        <span className="fw-bold"> { selectedNet}</span>, so you are requesting
+        <span className="fw-bold"> { selectedNet}</span> Link/ETH.
       </div>
       {/* form */}
       <Form></Form>
