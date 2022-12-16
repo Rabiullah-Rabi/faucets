@@ -5,6 +5,7 @@ import { router } from "./Routes/Routes";
 import './custom.scss'
 
 function App() {
+  
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>

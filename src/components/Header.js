@@ -20,13 +20,13 @@ const Header = () => {
     <Navbar expand="lg">
       <Container>
         <Row className="w-100 d-flex justify-content-between">
-          <Col className="d-flex justify-start">
+          <Col className="d-flex justify-start align-items-center">
+            <Link to='/' className="text-decoration-none">
             <Navbar.Brand
-              href="/"
               className="text-left fw-bold fs-3 text-primary"
             >
               Faucets
-            </Navbar.Brand>
+            </Navbar.Brand></Link>
           </Col>
           <Col>
             <Navbar.Toggle aria-controls="navbarScroll" />

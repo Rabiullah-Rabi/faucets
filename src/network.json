@@ -1,0 +1,10 @@
+[
+  { "name": "Ethereum Kovan", "img": "./assets/ethereum.svg" },
+  { "name": "Avalanche Fuji,", "img": "./assets/avalanche.svg" },
+  { "name": "BNB Chain Testnet", "img": "./assets/bsc.svg" },
+  { "name": "Arbitrum Rinkeby,", "img": "./assets/arbitrum.svg" },
+  { "name": "Fantom Testnet", "img": "./assets/fantom.svg" },
+  { "name": "Harmony Testnet", "img": "./assets/harmony.svg" },
+  { "name": "POA Network Sokol", "img": "./assets/poa.svg" },
+  { "name": "Polygon Mumbai", "img": "./assets/polygon.svg" }
+]

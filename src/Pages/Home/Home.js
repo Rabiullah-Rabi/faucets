@@ -1,8 +1,9 @@
 import React from "react";
+import Info from "./Info/Info";
 
 const Home = () => {
   return (
-    <div style={{ background: "#EEF2FE" }} >
+    <div style={{ background: "#EEF2FE" }}>
       <div className=" alert alert-primary text-white bg-primary " role="alert">
         Notice here
       </div>
@@ -13,6 +14,7 @@ const Home = () => {
           testnets so you can create and test your own oracle and Chainlinked
           smart contract
         </p>
+        <Info></Info>
       </div>
     </div>
   );
